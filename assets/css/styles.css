@@ -58,4 +58,112 @@ nav a:hover {
   background-color: var(--hover-color);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #800020;
+  border: none;
+  margin: 10px auto;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* styles.css updates for responsive navigation toggle */
+
+/* Ensure desktop nav is always flexed */
+.main-nav ul {
+  display: flex;
+}
+
+/* Mobile-specific nav toggle styles */
+@media (max-width: 768px) {
+  /* Hide nav links by default */
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* Show nav links when "show" class is present */
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  /* Display hamburger button on mobile */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin: 0.5rem auto;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Hide hamburger on desktop */
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ===== Mobile-specific nav toggle and responsive header fonts ===== */
+@media (max-width: 768px) {
+  /* Hide nav links by default */
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    background: var(--primary-color);
+  }
+
+  /* Show nav links when toggled */
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  /* Display hamburger on mobile, aligned left */
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    margin: 0.5rem 0 0.5rem 1rem; /* top right bottom left */
+  }
+
+  /* Responsive header font sizes */
+  .top-header h1 {
+    font-size: 1.5rem;
+  }
+  .top-header p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Desktop nav and header fonts ===== */
+@media (min-width: 769px) {
+  .main-nav ul {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+  .top-header h1 {
+    font-size: 2.2rem;
+  }
+  .top-header p {
+    font-size: 1rem;
+  }
+}
+
 
